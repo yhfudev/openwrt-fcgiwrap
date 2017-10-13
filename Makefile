@@ -15,7 +15,7 @@ PKG_SOURCE_PROTO:=git
 PKG_SOURCE_URL=https://github.com/gnosek/fcgiwrap.git
 PKG_SOURCE_DATE:=2017-09-08
 PKG_SOURCE_VERSION:=99c942c90063c73734e56bacaa65f947772d9186
-#PKG_MIRROR_HASH:=2ac4ba8dc0b349d72174aac9ff693a73a214295a9890fe3d2a8eedcad54d06e3
+#PKG_MIRROR_HASH:=
 PKG_MAINTAINER:=yhfudev
 PKG_LICENSE:=MIT
 
@@ -49,7 +49,6 @@ TARGET_LDFLAGS +=
 
 define Package/fcgiwrap/install
 	$(INSTALL_DIR) $(1)/usr/bin
-	#$(INSTALL_BIN) $(PKG_INSTALL_DIR)/usr/usr/sbin/fcgiwrap $(1)/usr/bin/
 	$(INSTALL_BIN) $(PKG_BUILD_DIR)/fcgiwrap $(1)/usr/bin/
 	$(INSTALL_DIR) $(1)/etc/init.d
 	$(INSTALL_BIN) ./files/fcgiwrap.init $(1)/etc/init.d/fcgiwrap
@@ -60,3 +59,4 @@ define Build/Prepare
 endef
 
 $(eval $(call BuildPackage,fcgiwrap))
+
