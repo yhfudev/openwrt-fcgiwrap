@@ -30,8 +30,8 @@ and then restart the service:
 ### Compile the fcgiwrap package
 
 To compile the binary package, you may use the SDK package for your router platform,
-or compile it from the source code of \href{https://openwrt.org/}{Original OpenWrt}
-or \href{https://lede-project.org/}{Lede-Project}.
+or compile it from the source code of ![Original OpenWrt](https://openwrt.org/)
+or ![Lede-Project](https://lede-project.org/).
 
 
 Suppose you use SDK, so you need to uncompress the package first, and then enter the
