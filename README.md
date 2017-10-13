@@ -63,8 +63,6 @@ If your git service need supports SSL, you need also re-compile the SSL version 
     ./scripts/feeds update -a
     ./scripts/feeds install -a
     make ./package/feeds/packages/nginx/compile
-    make ./package/feeds/packages/aria2/compile
-    make ./package/feeds/packages/lighttpd/compile
 
 ### Configure
 
