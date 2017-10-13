@@ -1,15 +1,15 @@
-fcgiwrap for OpenWrt
-====================
+# fcgiwrap for OpenWrt
+
 
 This package is for setting up a git/gitweb server for OpenWrt,
 it use nginx as web server to provide git service and web browser
 for your git projects.
 
-Install GIT and gitweb in OpenWrt
----------------------------------
+## Install GIT and gitweb in OpenWrt
 
 
-# Change the default web service ports
+
+### Change the default web service ports
 
 To support SSL and git service, we have to use nginx instead of the
 OpenWrt's default web server uhttpd due to its limitations. The git
@@ -27,7 +27,7 @@ and then restart the service:
 
     /etc/init.d/uhttpd restart
 
-# Compile the fcgiwrap package
+### Compile the fcgiwrap package
 
 To compile the binary package, you may use the SDK package for your router platform,
 or compile it from the source code of \href{https://openwrt.org/}{Original OpenWrt}
@@ -56,7 +56,7 @@ The binary is locate in sub directory `bin`,
 
     find bin
 
-# Compile nginx with ssl support
+### Compile nginx with ssl support
 
 If your git service need supports SSL, you need also re-compile the SSL version of nginx for OpenWrt.
 
@@ -66,9 +66,9 @@ If your git service need supports SSL, you need also re-compile the SSL version 
     make ./package/feeds/packages/aria2/compile
     make ./package/feeds/packages/lighttpd/compile
 
-# Configure
+### Configure
 
-## setup SSL for nginx server
+#### setup SSL for nginx server
 
 The suggest config for SSL is following
 
@@ -95,7 +95,7 @@ Build CA
 
     /etc/init.d/nginx restart
 
-## config git server
+#### config git server
 
 Install packages
     #opkg update
@@ -153,7 +153,7 @@ For a large GIT repo, you need setup the memory for the nginx:
         ...
     }
 
-## setup gitweb
+#### setup gitweb
 
 In the file /etc/gitweb.conf:
 
@@ -170,7 +170,7 @@ create user list:
     sudo sh -c "openssl passwd -apr1 >> /etc/nginx/access_list"
 
 
-## Prepare a git repo
+#### Prepare a git repo
 
 create user git, create a example repo
 
